@@ -1,0 +1,11 @@
+- name: Install apache
+  yum: name={{ item }} state=latest
+  with_items:
+    - httpd
+
+- name: copy /var/www/html/learn01.html file
+  copy: src=learn01.html dest=/var/www/html/learn01.html owner=root group=root mode=0644 backup=yes
+
+- name: Start the apache service
+  service: name=httpd enabled=yes state=started
+

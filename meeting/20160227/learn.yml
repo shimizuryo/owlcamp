@@ -1,0 +1,8 @@
+---
+- name: Owlcamp Learn 20160227
+  hosts: all
+  sudo: yes
+  sudo_user: root
+
+  roles:
+    - apache
